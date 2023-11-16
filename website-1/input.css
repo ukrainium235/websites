@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scaling-text{
+
+font-size: calc(1.8vmin);
+padding-left:  11vmin; 
+padding-top: 4vmin;
+}
+
+.small-bouncing-disk-destroying-ball{
+    @apply rounded-full fixed  animate-bounce;
+    @apply animate-pulse;
+
+    top: var(--top);
+    left: var(--left); 
+    width:var(--width) ;
+    height: var(--height);
+
+
+
+}

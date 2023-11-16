@@ -1,0 +1,66 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./output.css" />
+</head>
+<body class="bg-[#0061E0]">
+
+<div class="small-bouncing-disk-destroying-ball" >
+
+</div>
+<div id="ballholder">
+
+</div>
+<div class="w-[50vmin] h-[50vmin] bg-[F5006C] rounded-full mx-auto my-[25vh] animate-bounce ">
+  <pre class="text-black-300 scaling-text p-1/2">
+      _______________
+      /               \
+     |   .---------.   |@
+     '---' .-----. '---'@
+       .' /6 5_4 3\ '.  @
+       | |7 /...\ 2| |  @
+       | |8 \___/ 1| |  @
+       |  \_9_0_)\/  |  @@
+    /==|_____________|@@@@
+    H-------------------@@
+    H   )  ||   ||  (   @@
+    H  /   ||   ||   \   @
+    H |----''---''----|
+   =/ |_______________|
+   
+  </pre>
+  </div>
+  
+<script>
+  function addBall(){
+    let holder =document.getElementById("ballholder")
+    let ball=document.createElement('div');
+    let placeholder=document.createElement('pre');
+    let variable
+    placeholder.textContent='';
+    ball.appendChild(placeholder);
+    ball.className='small-bouncing-disk-destroying-ball';
+    ball.style.top=Math.random()*100-5+'vh';
+    ball.style.left=Math.random()*100-5+'vw';
+    let rand_radius =Math.random()*15+1;
+    ball.style.height=rand_radius+'vmin';
+    ball.style.width=rand_radius+'vmin';
+    holder.appendChild(ball);
+    ball.style.backgroundColor="rgb("+Math.random()*200+50+','+Math.random()*200+50+','+Math.random()*200+50+')'
+    "rgb(135,222,131)"
+
+    
+
+  }
+function sleep(ms){
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function addManyBalls(){
+  for (let step = 0; step < 1000; step++){{
+    addBall();
+    await sleep(1);
+  }}}
+addManyBalls()
+
+</script>
+</body>
+</html> 
